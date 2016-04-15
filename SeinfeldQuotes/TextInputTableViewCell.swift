@@ -19,7 +19,7 @@ class TextInputTableViewCell: UITableViewCell {
         textField.addTarget(self, action: "textFieldValueChanged:", forControlEvents: .EditingChanged)
     }
     
-    func configure(#text: String?, placeholder: String, textFieldChangedHandler: textFieldChangedHandlerType?) {
+    func configure(text text: String?, placeholder: String, textFieldChangedHandler: textFieldChangedHandlerType?) {
         
         textField.placeholder = placeholder
         textField.text = text
@@ -31,8 +31,8 @@ class TextInputTableViewCell: UITableViewCell {
     }
     
     func textFieldValueChanged(sender: UITextField) {
-        if let textFieldChangedHandler = textFieldChangedHander {
-            textFieldChangedHandler(sender.text)
+        if let textFieldChangedHandler = textFieldChangedHander, text = sender.text {
+            textFieldChangedHandler(text)
         }
     }
 }

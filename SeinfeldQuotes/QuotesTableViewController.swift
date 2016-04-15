@@ -14,7 +14,7 @@ class QuotesTableViewController: UITableViewController {
     private let quoteCellIdentifier = "quoteCell"
     
     required init(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
+        super.init(coder: aDecoder)!
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "onQuoteCreatedNotification:",
             name: NewQuoteCreatedNotification,
